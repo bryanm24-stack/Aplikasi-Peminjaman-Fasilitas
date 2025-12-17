@@ -26,7 +26,7 @@ export default function LoginPage() {
     <Box display="flex" justifyContent="center" alignItems="center" minHeight="80vh">
       <Card sx={{ minWidth: 350, padding: 2 }}>
         <CardContent>
-          <Typography variant="h5" gutterBottom align="center">Login SiPinjam</Typography>
+          <Typography variant="h5" gutterBottom align="center">Login</Typography>
           {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
           <form onSubmit={handleSubmit}>
             <TextField fullWidth label="Username" margin="normal" value={username} onChange={e => setUsername(e.target.value)} required />
