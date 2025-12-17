@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "Aula Utama",
+    "type": "Room",
+    "description": "Kapasitas 500 orang, AC",
+    "imageUrl": "..."
+  },
+  {
+    "name": "Kamera",
+    "type": "Alat",
+    "description": "Jurnalistik",
+    "id": 1764574489847
+  },
+  {
+    "name": "dsfsfs",
+    "type": "sdfsdg",
+    "description": "dgsdgsdgs",
+    "id": 1764650705545
+  }
+]

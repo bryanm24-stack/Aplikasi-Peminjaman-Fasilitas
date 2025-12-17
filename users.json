@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "123",
+    "role": "admin",
+    "fullName": "Administrator"
+  },
+  {
+    "id": 2,
+    "username": "mhs1",
+    "password": "123",
+    "role": "user",
+    "fullName": "Budi Santoso"
+  },
+  {
+    "id": 1764650859546,
+    "username": "mhs2",
+    "password": "123",
+    "fullName": "Mbappe",
+    "role": "user"
+  }
+]
