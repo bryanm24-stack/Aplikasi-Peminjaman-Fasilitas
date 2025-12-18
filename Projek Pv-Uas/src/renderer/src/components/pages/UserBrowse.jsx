@@ -14,7 +14,7 @@ export default function UserBrowse() {
       setSelectedFacility(null);
       setForm({ date: '', reason: '' });
     } catch (e) {
-      alert(e.message); // Pesan jika tanggal sudah penuh
+      alert(e.message); 
     }
   };
 
@@ -38,7 +38,6 @@ export default function UserBrowse() {
         ))}
       </Grid>
 
-      {/* Modal Form Peminjaman */}
       <Dialog open={!!selectedFacility} onClose={() => setSelectedFacility(null)}>
         <DialogTitle>Pinjam: {selectedFacility?.name}</DialogTitle>
         <DialogContent>
