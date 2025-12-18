@@ -7,14 +7,15 @@ import Auth, { ProtectedRoute } from './components/Auth'
 import App from './App'
 
 // --- Import Pages (Nanti kita buat filenya di Langkah 2) ---
+
 import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
-// import AdminFacilities from './components/pages/AdminFacilities'
-// import AdminLoans from './components/pages/AdminLoans'
-// import AdminFeedbacks from './components/pages/AdminFeedbacks' // Optional Admin view
-// import UserBrowse from './components/pages/UserBrowse'
-// import UserMyLoans from './components/pages/UserMyLoans'
-// import UserFeedback from './components/pages/UserFeedback'
+import AdminFacilities from './components/pages/AdminFacilities'
+import AdminLoans from './components/pages/AdminLoans'
+import AdminFeedbacks from './components/pages/AdminFeedbacks' // Optional Admin view
+import UserBrowse from './components/pages/UserBrowse'
+import UserMyLoans from './components/pages/UserMyLoans'
+import UserFeedback from './components/pages/UserFeedback'
 
 // Setup Tema MUI 
 const darkTheme = createTheme({
@@ -39,16 +40,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/" element={<ProtectedRoute element={<App />} allowedRoles={['admin', 'user']} />}>
               
               {/* ADMIN ROUTES */}
-              {/* <Route path="admin/facilities" element={<ProtectedRoute element={<AdminFacilities />} allowedRoles={['admin']} />} />
+
+              <Route path="admin/facilities" element={<ProtectedRoute element={<AdminFacilities />} allowedRoles={['admin']} />} />
               <Route path="admin/loans" element={<ProtectedRoute element={<AdminLoans />} allowedRoles={['admin']} />} />
-              <Route path="admin/feedbacks" element={<ProtectedRoute element={<AdminFeedbacks />} allowedRoles={['admin']} />} /> */}
+              <Route path="admin/feedbacks" element={<ProtectedRoute element={<AdminFeedbacks />} allowedRoles={['admin']} />} />
               
               {/* USER ROUTES */}
-              {/* <Route path="user/browse" element={<ProtectedRoute element={<UserBrowse />} allowedRoles={['user']} />} />
+
+              <Route path="user/browse" element={<ProtectedRoute element={<UserBrowse />} allowedRoles={['user']} />} />
               <Route path="user/my-loans" element={<ProtectedRoute element={<UserMyLoans />} allowedRoles={['user']} />} />
-              <Route path="user/feedback" element={<ProtectedRoute element={<UserFeedback />} allowedRoles={['user']} />} /> */}
+              <Route path="user/feedback" element={<ProtectedRoute element={<UserFeedback />} allowedRoles={['user']} />} />
 
               {/* Default Redirect */}
+              
               <Route path="/" element={<Navigate to="/login" replace />} />
             </Route>
           </Routes>
