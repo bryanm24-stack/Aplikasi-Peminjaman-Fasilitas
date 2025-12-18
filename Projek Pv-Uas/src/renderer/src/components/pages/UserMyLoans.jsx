@@ -6,7 +6,6 @@ import { Typography, Chip, Box } from '@mui/material';
 export default function UserMyLoans() {
   const { user, loans } = useContext(AuthContext);
 
-  // Filter hanya pinjaman milik user yang sedang login
   const myLoans = loans.filter(l => l.userId === user.id);
 
   const columns = [
