@@ -12,12 +12,5 @@
     "password": "123",
     "role": "user",
     "fullName": "Budi Santoso"
-  },
-  {
-    "id": 1764650859546,
-    "username": "mhs2",
-    "password": "123",
-    "fullName": "Mbappe",
-    "role": "user"
   }
 ]
