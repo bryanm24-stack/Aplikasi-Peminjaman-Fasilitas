@@ -163,6 +163,24 @@ export default function Auth({ children }) {
     await window.api.saveFeedbacks(newList)
   }
 
+  // const register = async (fullName, username, password, role) => {
+  //   if (users.find(u => u.username === username)) throw new Error("Username sudah dipakai")
+    
+  //   const newUser = {
+  //     id: Date.now(),
+  //     username, 
+  //     password, 
+  //     fullName, 
+  //     role: role // Gunakan role yang dikirim dari form (bisa 'admin' atau 'user')
+  //   }
+    
+  //   const newList = [...users, newUser]
+  //   setUsers(newList)
+  //   await window.api.saveUsers(newList)
+  //   setUser(newUser)
+  //   return newUser // Return user baru agar bisa dicek role-nya di halaman Register
+  // }
+
   const value = {
     user, isLoading, facilities, loans, feedbacks,
     login, logout, register,
