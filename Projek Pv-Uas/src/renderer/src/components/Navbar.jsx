@@ -13,7 +13,6 @@ export default function Navbar() {
     navigate('/login');
   };
 
-  // Komponen kecil untuk tombol menu aktif
   const NavButton = ({ to, label }) => (
     <Button 
       color="inherit" 
@@ -28,7 +27,6 @@ export default function Navbar() {
     </Button>
   );
 
-  // Jika user belum login, jangan tampilkan Navbar (atau tampilkan polosan)
   if (!user) return null;
 
   return (
@@ -39,7 +37,6 @@ export default function Navbar() {
         </Typography>
         
         <Box sx={{ display: 'flex', gap: 2 }}>
-          {/* Menu Khusus Admin */}
           {user.role === 'admin' && (
             <>
               <NavButton to="/admin/facilities" label="Fasilitas" />
@@ -48,7 +45,6 @@ export default function Navbar() {
             </>
           )}
 
-          {/* Menu Khusus User */}
           {user.role === 'user' && (
             <>
               <NavButton to="/user/browse" label="Pinjam Baru" />
