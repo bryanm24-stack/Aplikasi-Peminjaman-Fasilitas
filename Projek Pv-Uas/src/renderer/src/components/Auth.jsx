@@ -11,7 +11,6 @@ export const ProtectedRoute = ({ element, allowedRoles }) => {
   if (auth.isLoading) return <div>Loading System...</div>
   if (!auth.user) return <Navigate to="/login" replace state={{ from: location }} />
   
-  // Role Authorization Check
   if (allowedRoles && !allowedRoles.includes(auth.user.role)) {
     return <div style={{padding: 20}}>Akses Ditolak: Anda bukan {allowedRoles.join('/')}</div>
   }
@@ -27,7 +26,6 @@ export default function Auth({ children }) {
   const [feedbacks, setFeedbacks] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  // Load Data Awal
   const refreshData = async () => {
     try {
       setUsers(await window.api.getUsers())
@@ -43,9 +41,8 @@ export default function Auth({ children }) {
 
   useEffect(() => { refreshData() }, [])
 
-  // --- AUTHENTICATION ---
   const login = async (username, password) => {
-    await refreshData() // Pastikan data fresh
+    await refreshData() 
     const found = users.find(u => u.username === username && u.password === password)
     if (found) {
       setUser(found)
@@ -87,6 +84,14 @@ export default function Auth({ children }) {
     await window.api.saveFacilities(newList)
   }
 
+  const editFacility = async (id, data) => {
+    const newList = facilities.map(f => 
+      f.id === id ? { ...f, ...data } : f
+    )
+    setFacilities(newList)
+    await window.api.saveFacilities(newList)
+  }
+
   const requestLoan = async (facilityId, date, reason) => {
     const conflict = loans.find(l => 
       l.facilityId === facilityId && 
@@ -114,6 +119,8 @@ export default function Auth({ children }) {
     setLoans(newList)
     await window.api.saveLoans(newList)
   }
+
+
 
   const updateLoanStatus = async (loanId, newStatus) => {
     if(newStatus === 'approved') {
@@ -151,7 +158,7 @@ export default function Auth({ children }) {
     user, isLoading, facilities, loans, feedbacks,
     login, logout, register,
     addFacility, deleteFacility,
-    requestLoan, updateLoanStatus,
+    requestLoan, updateLoanStatus, editFacility,
     sendFeedback
   }
 

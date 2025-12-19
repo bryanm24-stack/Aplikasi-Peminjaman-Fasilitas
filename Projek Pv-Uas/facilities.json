@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Aula Utama",
+    "name": "Halo",
     "type": "Room",
     "description": "Kapasitas 500 orang, AC",
     "imageUrl": "..."
