@@ -56,10 +56,18 @@ export default function Auth({ children }) {
   const register = async (fullName, username, password) => {
     if (users.find(u => u.username === username)) throw new Error("Username sudah dipakai")
     
+    // ID Urut untuk User
+    const maxId = users.length > 0 ? Math.max(...users.map(u => u.id)) : 0
+    const nextId = maxId + 1
+
     const newUser = {
-      id: Date.now(), 
-      username, password, fullName, role: 'user'
+      id: nextId, 
+      username, 
+      password, 
+      fullName, 
+      role: 'user'
     }
+    
     const newList = [...users, newUser]
     setUsers(newList)
     await window.api.saveUsers(newList)
@@ -67,6 +75,7 @@ export default function Auth({ children }) {
   }
 
   const addFacility = async (data) => {
+    // ID Urut untuk Facility
     const maxId = facilities.length > 0 ? Math.max(...facilities.map(f => f.id)) : 0
     const newItem = { ...data, id: maxId + 1 }
     
@@ -100,6 +109,7 @@ export default function Auth({ children }) {
     )
     if (conflict) throw new Error("Fasilitas tidak tersedia pada tanggal tersebut.")
 
+    // ID Urut untuk Loan (Peminjaman)
     const maxId = loans.length > 0 ? Math.max(...loans.map(l => l.id)) : 0
     const nextId = maxId + 1
 
@@ -120,8 +130,6 @@ export default function Auth({ children }) {
     await window.api.saveLoans(newList)
   }
 
-
-
   const updateLoanStatus = async (loanId, newStatus) => {
     if(newStatus === 'approved') {
        const targetLoan = loans.find(l => l.id === loanId)
@@ -140,6 +148,7 @@ export default function Auth({ children }) {
   }
 
   const sendFeedback = async (message) => {
+    // ID Urut untuk Feedback
     const maxId = feedbacks.length > 0 ? Math.max(...feedbacks.map(f => f.id)) : 0
     
     const newFeedback = {

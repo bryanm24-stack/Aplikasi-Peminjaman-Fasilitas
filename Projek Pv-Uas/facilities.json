@@ -5,5 +5,11 @@
     "type": "Room",
     "description": "Kapasitas 500 orang, AC",
     "imageUrl": "..."
+  },
+  {
+    "name": "Get",
+    "type": "Get",
+    "description": "",
+    "id": 2
   }
 ]

@@ -12,5 +12,12 @@
     "password": "123",
     "role": "user",
     "fullName": "Budi Santoso"
+  },
+  {
+    "id": 3,
+    "username": "123",
+    "password": "123",
+    "fullName": "Halo",
+    "role": "user"
   }
 ]
