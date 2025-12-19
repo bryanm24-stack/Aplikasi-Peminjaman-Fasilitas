@@ -14,7 +14,6 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       const user = await login(username, password);
-      // Redirect sesuai role
       if (user.role === 'admin') navigate('/admin/facilities');
       else navigate('/user/browse');
     } catch (err) {
